@@ -1,7 +1,7 @@
 ﻿@page "/"
 
 @using ChartJs.Blazor;
-@using ChartJs.Blazor.Common
+@using ChartJs.Blazor.LineChart
 @using ChartJs.Blazor.PieChart
 @using ChartJs.Blazor.Util
 
@@ -10,44 +10,65 @@
 
 <h1>Chart.js!</h1>
 
-<Chart Config="_config"></Chart>
+<h2>Pie Chart</h2>
+<Chart Config="_configPie"></Chart>
+
+<h2>Line Chart</h2>
+<Chart Config="_configLine"></Chart>
 
 @code {
+    private string[] _labels = {"Yes", "No", "Maybe??", "unknown"};
     private int[] _data = {6, 5, 3, 7};
     
-    private PieConfig _config;
+    private PieConfig _configPie;
+    private LineConfig _configLine;
 
     protected override void OnInitialized()
     {
-        _config = new PieConfig
+        _configPie = new PieConfig
         {
             Options = new PieOptions
             {
                 Responsive = true,
-                Title = new OptionsTitle
-                {
-                    Display = true,
-                    Text = "ChartJs.Blazor Pie Chart"
-                }
+            }
+        };
+        _configLine = new LineConfig()
+        {
+            Options = new LineOptions()
+            {
+                Responsive = true,
             }
         };
 
-        foreach (string color in new[] { "Yes", "No", "Maybe??", "unknown" })
+        foreach (string label in _labels)
         {
-            _config.Data.Labels.Add(color);
+            _configPie.Data.Labels.Add(label);
+        }
+        
+        foreach (int x in new int[] {1,2,3,4})
+        {
+            _configLine.Data.Labels.Add("" + x);
         }
 
         PieDataset<int> dataset = new PieDataset<int>(_data)
         {
             BackgroundColor = new[]
             {
-                ColorUtil.ColorHexString(255, 99, 132), // Slice 1 aka "Red"
-                ColorUtil.ColorHexString(255, 205, 86), // Slice 2 aka "Yellow"
-                ColorUtil.ColorHexString(75, 192, 192), // Slice 3 aka "Green"
-                ColorUtil.ColorHexString(54, 162, 235), // Slice 4 aka "Blue"
+                ColorUtil.ColorHexString(255, 99, 132),
+                ColorUtil.ColorHexString(255, 205, 86),
+                ColorUtil.ColorHexString(75, 192, 192),
+                ColorUtil.ColorHexString(54, 162, 235),
             }
         };
 
-        _config.Data.Datasets.Add(dataset);
+        _configPie.Data.Datasets.Add(dataset);
+        
+        LineDataset<int> datasetLine = new LineDataset<int>(_data)
+        {
+            BackgroundColor = ColorUtil.ColorHexString(255, 99, 132),
+            // LineTension = 0.1,
+        };
+
+        _configLine.Data.Datasets.Add(datasetLine);
     }
 }
