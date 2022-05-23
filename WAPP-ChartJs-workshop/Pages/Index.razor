@@ -5,70 +5,31 @@
 @using ChartJs.Blazor.PieChart
 @using ChartJs.Blazor.Util
 
-
 <PageTitle>Index</PageTitle>
 
 <h1>Chart.js!</h1>
 
 <h2>Pie Chart</h2>
-<Chart Config="_configPie"></Chart>
+<!-- Stap 4 -->
 
 <h2>Line Chart</h2>
-<Chart Config="_configLine"></Chart>
 
 @code {
-    private string[] _labels = {"Yes", "No", "Maybe??", "unknown"};
-    private int[] _data = {6, 5, 3, 7};
+    private readonly string[] _labels = {"Yes", "No", "Maybe??", "unknown"};
+    private readonly int[] _data = {6, 5, 3, 7};
     
-    private PieConfig _configPie;
-    private LineConfig _configLine;
+    // Stap 5.1
 
+    
     protected override void OnInitialized()
     {
-        _configPie = new PieConfig
-        {
-            Options = new PieOptions
-            {
-                Responsive = true,
-            }
-        };
-        _configLine = new LineConfig()
-        {
-            Options = new LineOptions()
-            {
-                Responsive = true,
-            }
-        };
-
-        foreach (string label in _labels)
-        {
-            _configPie.Data.Labels.Add(label);
-        }
+        // Stap 5.2
         
-        foreach (int x in new int[] {1,2,3,4})
-        {
-            _configLine.Data.Labels.Add("" + x);
-        }
 
-        PieDataset<int> dataset = new PieDataset<int>(_data)
-        {
-            BackgroundColor = new[]
-            {
-                ColorUtil.ColorHexString(255, 99, 132),
-                ColorUtil.ColorHexString(255, 205, 86),
-                ColorUtil.ColorHexString(75, 192, 192),
-                ColorUtil.ColorHexString(54, 162, 235),
-            }
-        };
-
-        _configPie.Data.Datasets.Add(dataset);
+        // Stap 6
         
-        LineDataset<int> datasetLine = new LineDataset<int>(_data)
-        {
-            BackgroundColor = ColorUtil.ColorHexString(255, 99, 132),
-            // LineTension = 0.1,
-        };
 
-        _configLine.Data.Datasets.Add(datasetLine);
+        // Stap 7
+        
     }
 }

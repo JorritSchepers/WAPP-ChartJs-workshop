@@ -198,13 +198,13 @@
       "mscorlib.dll": "sha256-ghlJNtzzYlKIliGPuf0A0Yu6dmLycSx3F9uyeddFb\/g=",
       "netstandard.dll": "sha256-qpOz\/RBwhlIYfaE2GDEmjiproxkvSf2b9GeqHxvH+lg=",
       "System.Private.CoreLib.dll": "sha256-sfzSZ3YKC2rpF77TVOKLuPgQag93QXr9U4AUc9d\/LKA=",
-      "WAPP-ChartJs-workshop.dll": "sha256-c1udJ+9R1KRQrjrNJXdPqxK9NHniRop4qwm4MpYHqPY="
+      "WAPP-ChartJs-workshop.dll": "sha256-J\/Rg2KQLwdmhUZY3zr3Zq48f3MYTIyrTPHjOoj\/wI+4="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "WAPP-ChartJs-workshop.pdb": "sha256-5AvzSGWkQJ4b6+qcXyZWtePOmqZwPvWN1UwuYdKl4fE="
+      "WAPP-ChartJs-workshop.pdb": "sha256-aucyJkxUyPwUKagipflNObjkMgzLUiWOze5WQ558GVY="
     },
     "runtime": {
       "dotnet.6.0.5.5cswovkv63.js": "sha256-783uOt0jgblQfP6Yz5TJeuW2xxtl6UHZQPngZtCz79U=",
