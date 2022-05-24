@@ -107,7 +107,7 @@ foreach (int x in new int[] {1,2,3,4})
 LineDataset<int> datasetLine = new LineDataset<int>(_data)
 {
     BackgroundColor = ColorUtil.ColorHexString(255, 99, 132),
-    // Met de Line tenstion kan je spelen door de lijn strakker te tekenen of heel los. 
+    // Met de Line tension kan je spelen door de lijn strakker of losser te laten tekenen. 
     // Probeer maar LineTension = 2 te doen :)
     // LineTension = 0.1
 };
